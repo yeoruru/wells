@@ -1,0 +1,383 @@
+@charset "utf-8";
+
+/*reset*/
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+em {font-style: normal; font-weight: bold;}
+br.mo {display: none;}
+body,h1,h2,h3,h4,h5,h6,li,a,textarea,button,strong,label,input,th  {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/*Layout*/ /*폰트나중수정*/
+.wrap {width: 100%; min-width: 1280px; overflow: hidden; font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; color: #010101;}
+.innerBox {width: 1280px; height: 100%; margin: auto;position: relative; box-sizing: border-box;}
+/*메인비주얼*/
+section.main {width: 100%; height: 890px; background: #f3f3f7 url(../img/mainBg.png) no-repeat center; }
+section.main .logo {display: block; position: absolute; right: 20px; top:30px;}
+section.main .mainText {position: absolute; top: 100px; left: 0;}
+section.main .mainText p {font-size: 30px; font-weight: 300; line-height: 1.4; margin-bottom: 30px;}
+section.main .mainText h2 {font-size: 55px; font-weight: 300; letter-spacing: -2px; line-height: 1.2;}
+section.main .mainText h2 em {font-weight: bold; font-size: 65px;}
+section.main .buy {position: absolute; bottom: 130px; left: 0; width: 370px;}
+section.main .buy .text {width: 552px; font-size: 25px;margin-top: 30px; line-height: 1.2; font-weight: 400;}
+section.main .buy p  {float: left; line-height: 40px}
+section.main .buy p span {color: #db8c96; font-weight: bold;}
+section.main .buy a {display: block;float: right;}
+/*상단메뉴*/
+nav {width: 100%; background: #a27177; transition: all .5s;z-index: 100; position: relative; height: 80px;}
+nav .bg {width: 100%; height: 0px; background: rgba(255, 255, 255, 0.5); position: absolute; top: 80px; left: 0; transition: all .3s;}
+nav.on { position: fixed; top: 0; left: 0; transition: all .5s;}
+.gnb {width: 1280px; margin: auto; height: 80px; line-height: 80px;}
+.gnb > li {float: left; width: 25%;}
+.gnb > li > a {display: block; text-align: center; color: rgba(255, 255, 255, 0.9); font-size: 25px;}
+.gnb > li > a:hover,.gnb > li > a.on {background: #fff; color: #222; transition: background 0.5s; height: 75px; line-height: 70px;margin-top: 5px;}
+.gnb > li > .inner  {height: 50px; line-height: 50px; display: none; width: 200%}
+.gnb > li > .inner li{float: left; box-sizing: border-box; width: 22%}
+.gnb > li > .inner li:last-child {width: 34%;}
+.gnb > li > .inner.b {width: 200%;}
+.gnb > li > .inner.b li {width: 33.3333%;}
+.gnb > li > .inner li:nth-child(3) a:after{content: '|'; font-size: 14px; position: absolute; right:0px; top: -2px; font-weight: normal;}
+.gnb > li > .inner.b li:nth-child(3) a:after{content: '|'; font-size: 14px; position: absolute; right: -8px; top: -2px; font-weight: normal;opacity:0;}
+.gnb > li > .inner li:nth-child(1) a:after{content: '|'; font-size: 14px; position: absolute; right: 2px; top: -2px; font-weight: normal;}
+.gnb > li > .inner li:nth-child(2) a:after{content: '|'; font-size: 14px; position: absolute; right: -2px; top: -2px; font-weight: normal;}
+.gnb > li > .inner li a {display: block; text-align: center; font-size: 18px; color: #a27177; position: relative;}
+.gnb > li > .inner li a:hover {font-weight: 600;}
+.gnb > li > .inner.c li:nth-child(1) a:after {right: -28px;}
+.gnb > li > .inner.c li:nth-child(2) a:after {display: none;}
+/*사이드바*/
+nav .qiuk {background: #fff; width: 180px; position: absolute; right: 10px; top: 140px; text-align: center; padding: 20px 0; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+nav .qiuk p{font-size: 20px; line-height: 1.4; margin-top: 18px;}
+nav .qiuk p span {color: #db8c96;}
+nav .qiuk a {display: block; background: #db8c96; color: #fff; width: 90px; margin: 10px auto 0; border-radius: 40px; font-size: 20px; line-height: 1.6;}
+/*footer*/
+footer {background: #fff; border-top: 1px solid #ccc; padding: 40px 0; overflow: hidden;}
+footer .innerBox {width: 1100px;}
+footer .footerLogo {float: left; width: 22%;}
+footer .text {float: right; width:78%; font-size: 13px; line-height: 1.6; color: #000; font-weight: 300; letter-spacing: 0;}
+footer .text .col {color: #222;}
+footer .text .col2 {color: #694d2e;}
+footer .text a {border: 1px solid #ccc;  display: inline-block; padding: 2px 6px; margin-left: 5px;}
+/*하단배너*/
+section.p {background: #dbb7bb; padding: 80px 0; position: relative;}
+section.p ul {overflow: hidden; width: 1120px;}
+section.p ul li {float: left; position: relative;width: 550px; margin-right: 20px;}
+section.p ul li:last-child {margin-right: 0;}
+section.p ul li a {position: absolute; bottom: 50px; left: 40px; font-size: 25px;}
+section.p ul li a:hover {font-weight: bold;}
+section.p ul li a:after {content: ''; position: absolute; right: -40px; top: 9px; width: 35px; height: 22px; background: url(../img/main_img_027_1.png) no-repeat center; transition: all 0.2s;}
+section.p ul li a:hover:after {right: -50px; transition: all 0.2s;}
+section.p .goTop {position: absolute; right: 10px; bottom: 80px; background: #000; padding: 10px 12px;}
+
+/*콘텐츠내용시작*/
+/*웰스뷰티페이지*/
+section.beauty {background: #dbb7bb url(../img/beauty/bg.png) no-repeat center;}
+section.beauty .innerBox {height: 460px; position: relative;}
+section.beauty p.img {position: absolute; z-index: 10; top: 50px; left: 0;}
+section.beauty .text {position: absolute; width: 50%; top: 120px; right: 0;}
+section.beauty .text h2 { font-size: 35px; line-height: 1.2; font-weight: 300;}
+section.beauty .text h2 em {font-weight: normal;}
+section.beauty .text h2 span {display: inline-block; padding-bottom: 10px; border-bottom: 2px solid #000; margin-bottom: 10px;}
+section.beauty .text p {font-size: 30px; line-height: 1.3; font-weight: 300;}
+section.beauty2 {background: #f7f3f0; padding: 40px 0 0; height: 480px; box-sizing: border-box;}
+section.beauty2 .text {float: right; width: 43%; margin-right: 94px; text-align: justify;}
+section.beauty2 .text p {font-size: 20px; line-height: 1.4; font-weight: 300;margin-bottom: 15px;}
+section.beauty2 .text em {font-weight: normal;font-size: 20px;}
+section.beauty2 .text a {display: block; margin-top: 25px;}
+/*플라즈마페이지*/
+.plasma section .inner {width: 1280px; margin: auto;}
+.plasma section.a {background: #eaeaea url(../img/plasma/plasma_01.png) no-repeat center; height: 750px;}
+.plasma section.a .inner {position: relative; height: 100%;}
+.plasma section.a .text {position: absolute; right: 60px; top: 260px; line-height: 1.2;}
+.plasma section.a .text h2 {font-weight: normal; font-size: 45px; letter-spacing: -2px; margin-bottom: 30px;}
+.plasma section.a .text p {font-size: 30px;}
+.plasma section.b .top{background: #1d1112; height: 700px;}
+.plasma section.b .top .inner {position: relative; width: 100%; max-width: 1920px; margin: auto; height: 100%; overflow: hidden; }
+.plasma section.b .top .inner .a {width: 1120px; display: block;margin: 180px auto 0;position: relative; z-index: 10;}
+.plasma section.b .top .inner .b {position: absolute; bottom: -28%; left: 1%;}
+.plasma section.b .top .inner .c {position: absolute; top: -10%; left:45%;}
+.plasma section.b .top .inner .d {position: absolute; bottom: 6%; right: 11%;}
+.plasma section.b .top .inner .b {animation: bb linear 10s 0s infinite;}
+@keyframes bb {
+	0% {opacity: 1;}
+    30% {opacity: 0.8; bottom: -20%;}
+    60% {opacity: 1;left: -2%;}
+	100% {opacity: 1;}
+}
+.plasma section.b .top .inner .c {animation: cc linear 5s 0s infinite;}
+@keyframes cc {
+	0% {opacity: 1;}
+    50% {opacity: 0.8; transform: scale(0.96)}
+	100% {opacity: 1;}
+}
+.plasma section.b .top .inner .d {animation: dd linear 5s 0s infinite;}
+@keyframes dd {
+	0% {opacity: 1;}
+    30% {opacity: 0.6; bottom: 10%;}
+    60% {opacity: 1;right: 9%; bottom: 8%;}
+	100% {opacity: 1;}
+}
+.plasma section.b .bottom {background: #f7f3f0; padding-bottom: 40px;}
+.plasma section.b .bottom .inner {width: 1120px; position: relative;}
+.plasma section.b .bottom .img {position: absolute; top: -150px; left: 0; z-index: 10;}
+.plasma section.b .bottom .text {float: right; font-size: 30px; line-height: 1.2;margin-top: 70px;}
+.plasma section.b .bottom .text em {font-size: 45px;margin-right: 170px;display: block; margin-top: 10px;}
+.plasma section.b .bottom .table {padding-top: 300px;}
+.plasma section.b .bottom > p {font-size: 25px; margin: 60px 0 10px;text-align: center;line-height: 1.3;}   
+.plasma section.b .bottom > h2 {line-height: 1.3;font-size: 25px; margin-bottom: 40px;text-align: center; color: #6d77b9; font-weight: normal;}     
+.plasma section.c {background: #fff; text-align: center; padding: 90px 0;}    
+.plasma section.c h2 {font-size: 45px; line-height: 1.2; font-weight: normal;}
+.plasma section.c .ani {background: url(../img/plasma/plasma_05.png) no-repeat center; margin: 45px auto; width: 1120px; height: 280px; position: relative;}    
+.plasma section.c .ani p {position: absolute; right: 0; top: 0; width: 170px; height: 170px; border-radius: 50%; border: 8px solid #b9b4ca; box-sizing: border-box; line-height: 1.2; padding-top: 38px; font-size: 20px;}
+.plasma section.c .ani .line {position: absolute; width: 290px; height: 2px; background: #c5cede; left: 640px; top: 32%; margin-top: -1px;}
+.plasma section.c .ani .line:before {content: ''; width: 10px; height: 10px; background: #b9b4ca; position: absolute; border-radius: 50%; left: 0; top: -4px;}
+.plasma section.c .ani .line:after {content: ''; width: 10px; height: 10px; border: 3px solid #b9b4ca; position: absolute; border-radius: 50%; right: -8px; top: -4px; box-sizing: border-box;}
+.plasma section.c .ani p em {font-size: 28px; color: #b9b4ca;}
+.plasma section.c p {font-size: 25px; line-height: 1.3;}   
+.plasma section.c2 {background: #f7f3f0;padding: 90px 0;overflow: hidden;}    
+.plasma section.c2 .text {float: left;}
+.plasma section.c2 .img {float: right;}
+.plasma section.c2 h2 {font-size: 45px; line-height: 1.2; font-weight: normal; margin-bottom: 300px;}
+.plasma section.c2 p {font-size: 25px; line-height: 1.4;}   
+.plasma section.d {background: #dbb7bb; text-align: center; padding: 90px 0;}
+.plasma section.d h2 {font-size: 45px; font-weight: normal;}
+.plasma section.d .ani {width: 1120px; margin: 80px auto 30px; position: relative;}
+.plasma section.d .ani .a {position: absolute; left: 154px; top: -40px;}
+.plasma section.d .ani .b {position: absolute; left: 344px; top: -40px;}
+.plasma section.d .ani .img {z-index: 2; position: relative; margin-bottom: 60px;} 
+.plasma section.d .ani p{font-size: 18px; text-align: left; color: #fff; line-height: 1.4; font-weight: 100; letter-spacing: 0;}
+.plasma section.e {text-align: center; padding: 95px 0 110px;}
+.plasma section.e h2 {font-size: 45px; margin-bottom: 90px; font-weight: normal; line-height: 1.2;}
+.plasma section.f {background: #f7f3f0; text-align: center; padding: 90px 0; overflow: hidden;}
+.plasma section.f h2 {font-size: 45px; font-weight: normal;line-height: 1.2;}
+.plasma section.f p {font-size: 28px; font-weight: normal;line-height: 1.3;}
+.plasma section.f .ani {margin: 40px auto 60px; width: 1000px; background: url(../img/plasma/plasma_011.png) no-repeat center left 51%; overflow: hidden;}
+.plasma section.f .ani li {float: left;}
+.plasma section.f .ani .light {position: relative; float: right;}
+.plasma section.f .ani .light span {position: absolute; left: 19.5%; top: 0; width: 340px; height: 223px; overflow: hidden;}
+.plasma section.f .ani .light span img {width: 100%;}
+.plasma section.f p.col{font-size: 18px; text-align: left;line-height: 1.4; font-weight: 100; letter-spacing: 0; width: 1120px; margin: 40px auto 0;}
+.plasma section.g {background: #dbb7bb; text-align: center; padding: 80px 0;} 
+.plasma section.g h2 {font-size: 45px; line-height: 1.2; font-weight: normal; margin-bottom: 20px;}
+.plasma section.g .ani {background: url(../img/plasma/plasma_012.png) no-repeat left; margin: 65px auto 30px; width: 1120px; height: 350px; position: relative;}    
+.plasma section.g .ani p {position: absolute; right: 90px; top: 50px; width: 250px; height: 250px; border-radius: 50%; border: 8px solid #fff; box-sizing: border-box; line-height: 1.2; padding-top: 55px; font-size: 25px; color: #fff;}
+.plasma section.g .ani .line {position: absolute; width: 290px; height: 2px; background: #fff; left: 470px; top:50%; margin-top: -1px;}
+.plasma section.g .ani .line:before {content: ''; width: 10px; height: 10px; background: #fff; position: absolute; border-radius: 50%; left: 0; top: -4px;}
+.plasma section.g .ani .line:after {content: ''; width: 10px; height: 10px; border: 3px solid #fff; position: absolute; border-radius: 50%; right: -8px; top: -4px; box-sizing: border-box;}
+.plasma section.g .ani p em {display: block; margin-top: 10px;}
+.plasma section.g p {font-size: 25px; line-height: 1.3;}   
+.plasma section.h {text-align: center; padding: 90px 0 110px;}
+.plasma section.h h2 {font-size: 45px; margin-bottom: 50px; font-weight: normal; line-height: 1.2;}
+.plasma section.i {background: #dbb7bb; padding: 90px 0 0; text-align: center;}
+.plasma section.i h2 {font-size: 45px; margin-bottom: 30px; font-weight: normal; line-height: 1.2;}
+.plasma section.i p {font-size: 25px; margin-bottom: 220px; font-weight: normal; line-height: 1.3;}
+.plasma section.i .ani {background: url(../img/plasma/plasma_014.png) no-repeat center left 48.5%; width: 1120px; height: 365px; margin: auto; position: relative;}
+.plasma section.i .ani .a {position: absolute; left: 12px; top: 51%;}
+.plasma section.i .ani .b {position: absolute; right: 9%; top: 5%;}
+.plasma section.i .ani .c {position: absolute; left: 38%; top: -46%;}
+.plasma section.i .ani .d {position: absolute; left: 20%; bottom: 11%;}
+.plasma section.j {background: #f7f3f0; padding: 90px 0; text-align: center;}
+.plasma section.j h2 {font-size: 30px; line-height: 1.2; font-weight: normal; margin-bottom: 30px;}
+.plasma section.j h2 em {font-size: 45px;}
+.plasma section.j p {font-size: 25px; line-height: 1.2; font-weight: 100; margin-top: 50px;}
+.plasma section.j p em {font-weight: normal; display: block; margin-bottom: 5px;}
+.plasma section.k {text-align: center; padding: 90px 0;}
+.plasma section.l {background: #dbb7bb; text-align: center; position: relative;}
+.plasma section.l h2 {font-size: 30px; line-height: 1.3; font-weight: normal; position: absolute; top: 90px; left: 0; width: 100%; color: #fff;}
+.plasma section.l .inner {position: relative;width: 1920px;}
+.plasma section.l .a {position: absolute; left: 19%; top: 42%;}
+.plasma section.l .b {position: absolute; right: 23.5%; top: 58.5%;}
+.plasma section.l h2 em.size {display: block; font-size: 60px; text-shadow: -2px -2px 2px #b3797a;}
+.plasma section.m {background: #f7f3f0; padding: 90px 0; text-align: center;}
+.plasma section.m h2 {font-size: 50px; line-height: 1.2; font-weight: normal; margin-bottom: 50px;}
+.plasma section.m p {font-size: 20px; line-height: 1.5; margin: 50px 0;}
+.plasma section.m a {display:inline-block;}
+/*뷰티패키지*/
+
+.package section.a {background: #f5f5f5 url(../img/package/package_01.png) no-repeat center; height: 700px;}
+.package section.a .inner {position: relative;height: 100%;}
+.package section.a .text {position: absolute; top: 220px; left: 0px;margin: 0;}
+.package section.a .text p {padding-bottom: 15px; border-bottom: 2px solid; display: inline-block; margin-bottom: 15px;}
+.package section.a .text h2 {font-weight: bold; line-height: 1.6; margin-bottom: 0; font-size: 50px;}
+.package span.prod {display: block; text-transform: uppercase; font-weight: normal; color: #333; font-size: 20px; letter-spacing: 5px; margin-left: 2px;}
+.package section.l h2 {color: #000; font-size: 30px;}
+.package section.l h2 em.size {text-shadow: 0 0 0 transparent;}
+.package section.b .inner {width: 1120px; overflow: hidden; padding: 90px 0;text-align: center; background: url(../img/package/package_05_2.png) no-repeat center top 65%;}
+.package section.b .inner div.a {float: left; width: 480px; position: relative; overflow: hidden;}
+.package section.b .inner div.b {float: right; width: 480px; position: relative;}
+.package section.b .inner > div > p { font-size: 25px; line-height: 1.3; margin: 30px 0 70px;}
+.package section.b .inner > div > .a {position: absolute; top: 115px; right: 0px;}
+.package section.b .inner > div.a > .b {position: absolute; bottom: 328px; left: 0;}
+.package section.b .inner > div.a > .b2 {position: absolute; bottom: 236px; left: 0;}
+.package section.b .inner > div.a > .b3 {position: absolute; bottom: 198px; left: 0;}
+.package section.b .inner > div.a > .c {position: absolute; bottom: 205px; left: 0; width: 100%;}
+.package section.b .inner > div.b > .b {position: absolute; bottom: 237px; left: 0;}
+.package section.b .inner > div.b:after {content: ''; width: 100%; height: 100px; background: #fff; position: absolute; bottom: 388px; left: 0;}
+.package section.b .inner >p {clear: both; font-size: 18px; font-weight: 100; color: #555;}
+.package section.b2 {background: #f7f3f0; text-align: center; padding: 90px 0;}
+.package section.c {background: #dbb7bb;  padding:  80px 0 0;}
+.package section.c .inner { width: 1400px; background: url(../img/package/package_07.png) no-repeat left -60px top 0; height: 777px; overflow: auto;}
+.package section.c .inner .text {text-align: left; float: right; margin: 130px 150px 0 0}
+.package section.c .inner .text h2 {font-size: 60px; font-weight: bold; padding-bottom: 10px; border-bottom: 3px solid;}
+.package section.c .inner .text ul {margin-top: 200px; margin-left: 10px;}
+.package section.c .inner .text ul li {font-size: 23px; line-height: 2; padding-left: 20px; position: relative;}
+.package section.c .inner .text ul li:before {content: ''; position: absolute; left: -10px; top: 11px; width: 21px; height: 20px; background: url(../img/package/package_08.png) no-repeat center;}
+.package section.c.d {background: #f7f3f0;}
+.package section.c.d .inner { background: url(../img/package/package_09.png) no-repeat right -30px top 0; height: 746px;}
+.package section.c.d .inner .text {float: left; margin: 100px  0 0 130px;}
+.package section.m {background:  #dbb7bb; padding: 70px 0 30px;}
+.package section.o {background: #fff; text-align: center; position: relative;}
+.package section.o a {position: absolute; display: block; bottom: 80px; left: 50%; transform: translateX(-50%);}
+/*웰스스토리페이지*/
+.story > section {background: #f7f3f0; text-align: center; padding: 80px 0; box-sizing: border-box;}
+.story > section h2 {font-size: 35px; line-height: 1.2; color: #db8c96; font-weight: 100;}
+.story > section h2 em {text-transform: uppercase; letter-spacing: 10px; font-size: 45px; line-height: 1.5; border-top: 2px solid #db8c96; border-bottom: 2px solid #db8c96; padding: 0 2px; display: inline-block; margin: 20px 0 0;}
+.story > section .video {margin: 40px 0 25px;}
+.story > section h3 {font-size: 33px; font-weight: normal; line-height: 1.3;}
+.story > section p {margin-top: 18px; font-size: 28px; line-height: 1.3; font-weight: normal;color: #db8c96;}
+.story > section p em {font-weight: 100; color: #fff; background:#db8c96; padding: 0 5px; margin-top: 5px; display: inline-block;}
+.story > section p em strong {font-weight: normal;}
+.story > section.b {background: #dbb7bb;}
+.story > section.b h2 {color: #fff;}
+.story > section.b h2 em {border-color: #fff;}
+.story > section.b span {font-size: 35px;}
+.story > section.b p {color: #fff;}
+.story > section.b p em {color: #db8c96; background: #fff;}
+.story > section.c p em {letter-spacing: 5px; font-size: 32px; line-height: 1.4; padding: 0 10px;}
+.story > section.d {background: #fff;}
+.story > section.d h3 {font-size: 25px; position: relative; margin-bottom: 50px; line-height: 1.4;}
+.story > section.d h3:after {position: absolute; content: '|'; bottom: -40px; left: 50%; color: #db8c96; font-weight: bold; margin-left: -1px;}
+.story > section.d p em {font-size: 32px; margin-bottom: 5px; line-height: 1.4;}
+.story > section.banner {background: #dbb7bb;}
+.story > section.banner ul li {width: 32.6%; margin-right: 1%;}
+.story > section.banner ul li:last-child {margin-right: 0;}
+.story > section.banner ul li>img {width: 100%;}
+.story > section.banner ul li a {font-size: 20px; left: 20px; bottom: 30px;}
+.story > section.banner ul li a:after {width: 32px;top: 5px;}
+/*소비자리뷰페이지*/
+section.review {background: #f7f3f0; padding: 100px 0;}
+section.review h2 {text-align: center; margin-bottom: 50px;}
+section.review .listBox {width: 1200px;margin: 0 auto;}
+section.review .list {width: 100%;overflow: hidden;}
+/*list li*/
+section.review .js-load {display: none;}
+section.review .js-load.active {display: block;}
+section.review .list li {width: 300px; height: 300px; float: left; animation-name: listLi;animation-duration: 0.8s; padding: 10px; box-sizing: border-box;}
+@keyframes listLi{0% {transform: scale(0)}100% {transform: scale(1)}}	
+section.review .list li a {display: block; width: 100%; height: 100%; position: relative;}
+section.review .list li a img {width: 100%; height: 100%;}
+section.review .list li a .over{width: 100%; height: 100%; background: rgba(180, 120, 128, 0.68); position: absolute; top: 0; left: 0; opacity: 0; transition:  0.5s; text-align: center;}	
+section.review .list li a .over .icon  {opacity: 0; width: 36px; position: absolute; top: 40%; left: 50%; transform: translateX(-50%);}
+section.review .list li a .over p {opacity: 0; color: #fff; position: absolute; top: 60%; left: 50%; transform: translateX(-50%); width: 90%; font-size: 20px; font-weight: normal; transition: 0.3s;}	
+section.review .list li a .over .by {opacity: 0;font-weight: 100; position: absolute; top: 90%; left: 50%; transform: translateX(-50%); font-size: 16px; font-weight: 100;}
+/*리스트 마우스오버*/
+section.review .list li a:hover .over{opacity: 1; transition: 0.7s;}
+section.review .list li a:hover .over .icon {opacity: 1; top: 20%; transition: 0.6s;}
+section.review .list li a:hover .over p {opacity: 1; top: 41%; transition: 0.7s;}
+section.review .list li a:hover .over .by {opacity: 1; top: 78%; transition: 0.6s;}
+section.review .list li a .over .by span {margin-right: 2px;}
+section.review .btnWrap {text-align: center; width: 200px; margin: 70px auto 0;}
+section.review .btnWrap .button {display: block; width: 100%; height: 100%;}
+/*실구매자리뷰 페이지*/
+section.review.u{padding: 0; padding-bottom: 100px; position: relative;}
+section.review.u .top {position: relative;}
+section.review.u .top img {width: 100%;}
+section.review.u .top .opa {width: 100%; opacity: 0;}
+section.review.u .top .position {width: 100%; position: absolute; top: 0;left: 0;}
+section.review.u .mid {text-align: center; margin: auto;}
+section.review.u .mid a {display: inline-block; width: 280px; height: 70px; border-radius: 50px; background: #db8c96; color: #fff; font-size: 23px; line-height: 70px; margin:50px 10px;}
+section.review.u .mid a.url {background: #fff; border: 4px solid #db8c96; color: #db8c96; height: 66px; line-height: 66px;}
+section.review.u .user {width: 1160px; text-align: center; font-size: 26px; font-weight: 500; color: #db8c96;padding-bottom: 20px; border-bottom: 1px solid #db8c96; margin: auto;}
+section.review.u .user span {color: #333; font-weight: 300; font-size: 23px;}
+section.review.u .listBox {width: 1180px; margin-top: 20px}
+section.review.u .list li {overflow: hidden; width: 370px; height: 420px;; float: left; animation-name: listLi;animation-duration: 0.8s; padding: 0px; box-sizing: border-box; margin: 11.6px;}
+@keyframes listLi{0% {transform: scale(0)}100% {transform: scale(1)}}	
+section.review.u .list li a {overflow: hidden;}
+section.review.u .list li a .img {width: 100%; height: 300px; overflow: hidden; margin-bottom: 20px;}
+section.review.u .list li a img {width: 100%; height: auto;}
+section.review.u .list li a h3 {font-size: 20px;width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; margin-bottom: 10px;}
+section.review.u .list li a p {font-size: 18px;width:100%; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; white-space: normal; line-height: 1.4; height: 2.8em; text-align: left; word-wrap: break-word; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-weight: 200;}
+/*실구매자리뷰 상세보기*/
+section.review.view .box{background: #fff; width: 1180px; margin: auto; text-align: center; padding: 55px 0;}
+section.review.view .box .product {font-size: 25px; color: #db8c96; border-top: 1px solid #db8c96; border-bottom: 1px solid #db8c96; display: inline-block; padding: 8px 10px;}
+section.review.view .box .title {font-size: 38px; color: #111; margin: 30px 0; font-weight: 500;}
+section.review.view .box .date {font-size: 18px; color: #999; line-height: 1.6; font-weight: 500;}
+section.review.view .box h4 {font-size: 20px; margin-bottom: 50px; font-weight: 500;}
+section.review.view .box h4 .name {font-weight: 600; }
+section.review.view .box h4 .age {font-weight: 300;}
+section.review.view .box h4 .color {font-weight: 600; color: #db8c96;}
+section.review.view .img li {margin-bottom: 25px;}
+section.review.view .contents {width: 65%; margin: 40px auto 50px; line-height: 1.8; font-size: 18px; font-weight: 300;}
+section.review.view button {background: #fff; border: 1px solid #db8c96; color: #db8c96; font-size: 22px; width: 200px; height: 55px;}
+/*실구매자리뷰 작성*/
+section.review2 {background: #f7f3f0; padding: 100px 0; letter-spacing: 0;}
+section.review2 .inner {width: 1180px; margin: auto; font-size: 16px;}
+section.review2 .inner h2 {font-size: 25px; color: #db8c96; padding-bottom: 15px;}
+section.review2 .form-box {width: 100%;}
+section.review2 .form-box > table {width: 100%; border-top: 2px solid #db8c96;}
+section.review2 .form-box table tr {line-height: 1.6;}
+section.review2 .form-box table .line {border-bottom: 2px solid #e5dbd3; padding-bottom: 30px;}
+section.review2 .form-box > table td {padding: 10px 0 0;}
+section.review2 .form-box .tit {font-size: 17px; font-weight: 500; color: #4d4d4d;}
+section.review2 .form-box .txt {background: #fff; color: #4d4d4d; font-weight: 300; border: 1px solid #dbb7bb; padding: 0 20px 20px; font-size: 14px; line-height: 1.6; box-sizing: border-box; overflow: auto; height: 160px;}
+section.review2 .form-box .txt h3 {font-weight: 300; font-size: 15px; line-height: 2; margin: 10px 0 0px;}
+section.review2 .form-box .txt > table {width: 100%; margin: 10px 0; text-align: center; border-left: 1px solid #bbb; border-bottom: 1px solid #ccc; font-size: 13px;}
+section.review2 .form-box .txt > table td {padding: 5px 0; border-right: 1px solid #ccc;}
+section.review2 .form-box .txt > table .th {background: #ccc; color: #222;}
+section.review2 .form-box .red {color: #c33648; font-size: 15px; font-weight: 300;}
+/*폼*/
+section.review2 .form-box input[type=text] {background: #fff; border: 1px solid #e5dbd3; width: 100%; height: 42px; padding-left:15px; box-sizing: border-box; font-weight: 300; font-size: 16px;}
+section.review2 .form-box select {background: #fff url(../img/selectbox.png) no-repeat right 12px top 50%; border: 1px solid #e5dbd3; width: 100%; height: 42px; padding-left:15px; box-sizing: border-box; color: #888; font-weight: 300; font-size: 16px;-webkit-appearance: none;-moz-appearance: none;appearance: none;line-height: 2;}
+section.review2 .form-box select::-ms-expand {display: none;}
+section.review2 .form-box .btn {font-size: 14px;width: 100px; background: #333; font-weight: 500;border: none; border-radius: 5px; color: #fff; height: 42px;}
+section.review2 .form-box textarea {background: #fff; border: 1px solid #e5dbd3; width: 100%; height: 235px; padding:15px; box-sizing: border-box; font-weight: 300; font-size: 16px; resize: none;}
+section.review2 .notice {width: 1180px; margin: 30px auto 40px; background: #fff; border: 1px solid #db8c96;}
+section.review2 .notice table td {padding: 15px; box-sizing: border-box; color: #333; font-size: 15px; font-weight: 300; line-height: 1.6;}
+section.review2 .notice h3 {font-size: 17px; color: #db8c96; font-weight: normal;}
+section.review2 .notice h4 {font-size: 16px; color: #333; font-weight: normal; margin-top: 10px;}
+section.review2 .notice span {font-size: 16px; color: #db8c96; font-weight: normal;  margin-right: 3px;}
+section.review2 .submit {display: block; width: 240px; height: 57px; font-size: 18px; letter-spacing: 0; color: #fff; border-radius: 30px; border: none; background: #db8c96; font-weight: normal; margin: auto;}
+button:hover {cursor: pointer;}
+/*체크박스*/
+.checks {position: relative;} 
+.checks input[type="checkbox"] {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0 } 
+.checks input[type="checkbox"] + label { display: inline-block; position: relative; padding-left: 30px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; font-size: 17px;vertical-align: middle; font-weight: 300; margin-left: 30px;} 
+.checks input[type="checkbox"] + label:before {content: ''; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; line-height: 18px;  text-align: center; background: #fff; border: 1px solid #e5dbd3;} 
+.checks input[type="checkbox"] + label:active:before, .checks input[type="checkbox"]:checked + label:active:before { box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); } 
+.checks input[type="checkbox"]:checked + label:before { content: '\2714';  color: #db8c96; background: #fff; border-color: #e5dbd3;}
+/*파일첨부*/
+section.review2 .form-box input.upload_text {float:left;width:290px; margin-right: 10px;}
+div.upload-btn_wrap input.input_file {position:absolute;top:0;right:0;cursor:pointer;opacity:0;filter:alpha(opacity=0);-ms-filter:"alpha(opacity=0)";-moz-opacity:0; height: 42px;}
+div.upload-btn_wrap {overflow:hidden;position:relative;float:left;width: 100px; height: 42px;}
+div.upload-btn_wrap button {font-size: 14px;width: 100px; background: #333; font-weight: 500;border: none; border-radius: 5px; color: #fff; height: 42px;}
+/*우편번호찾기팝업*/
+#layer-mask {position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 1000;}
+div.layer-popup {position: fixed; width: 500px; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #fff; box-sizing: border-box; z-index: 1001; display: none;}
+div.layer-popup .top {background: #a27177; padding: 22px 30px; box-sizing: border-box; overflow: hidden;}
+div.layer-popup .top h1  {float: left; color: #fff; font-weight: 400; font-size: 22px;}
+div.layer-popup .top .close  {float: right; display: block;}
+div.layer-popup .bottom{width: 100%; padding: 20px 30px; box-sizing: border-box;}
+div.layer-popup table {display: block; width: 100%;}
+div.layer-popup table td {padding: 10px 0;}
+div.layer-popup table .th {font-size: 20px;}
+div.layer-popup input[type=text] {background: #fff; border: 1px solid #e5dbd3; width: 87%; float: left; height: 45px; padding-left:15px; box-sizing: border-box; font-weight: 300; font-size: 16px;}
+div.layer-popup .search {width: 13%;background: #a27177; border: none; height: 45px; line-height: 42px;}
+div.layer-popup textarea {background: #fff; border: 1px solid #e5dbd3; width: 100%; height: 350px; padding:15px; box-sizing: border-box; font-weight: 300; font-size: 16px; resize: none;}
+div.layer-popup .red {font-size: 14px; color: #a27177;}
+div.layer-popup button.close {display: block; width:110px; margin: 10px auto; height: 45px; background: #333; color: #fff; border: none;}
+div.layer-popup.b {text-align: center; padding: 33px 0 25px; line-height: 1.4; width: 480px;}
+div.layer-popup.b h2 {font-size: 35px; color: #a27177; margin-top: 10px;}
+div.layer-popup.b p {font-weight: 500; font-size: 19px; margin-bottom:30px;}
+div.layer-popup.b button.close {background:#a27177; font-size: 18px; width: 140px; height: 50px;}
+div.layer-popup.c {padding: 31px 30px 36px;text-align: center;}
+div.layer-popup.c h2 {text-align: center; color: #a27177; font-weight: 500; font-size: 24px; letter-spacing: -1px; padding-bottom: 15px;}
+div.layer-popup.c table {border-top: 3px solid #a27177; width: 95%; margin: auto; border-bottom: 1px solid #a27177; font-size: 15px; font-weight: 100; padding: 10px 0; text-align: left;}
+div.layer-popup.c table .th {width: 30%; font-size: 17px; font-weight: 500; color: #222;}
+div.layer-popup.c table td {padding: 5px 0;}
+div.layer-popup.c p {color: #e05365; text-align: center; margin: 12px 0 20px; font-size: 14px;}
+div.layer-popup.c button {width: 35%; border: none; color: #fff;  background: #333; height: 45px; font-size: 17px;}
+div.layer-popup.c button.yes {margin-right: 5px; background: #a27177;}
